@@ -1,0 +1,805 @@
+@import url('global.css'); /* import variables */
+
+/* smooth scrolling using nav */
+html { 
+    scroll-behavior: smooth;
+}
+
+
+.hero .container {
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 60px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* header and navigations */
+header {
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 20px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--feature-icon-bg);
+}
+
+.theme-icon {
+    font-size: 20px;
+}
+
+.big-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.big-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* hero section - includes hero content and hero image */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 0;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 60px;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+}
+
+/* app on phone */
+.phone-mockup {
+    width: 240px; 
+    height: 480px; 
+    background-color: #2d2d2d;
+    border-radius: 24px; 
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+ /* horizontal bottom line on phone */
+.phone-mockup::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 4px;
+    background-color: #555;
+    border-radius: 2px;
+}
+
+/* screen  */
+.phone-screen {
+    position: absolute;
+    top: 10px; 
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: var(--bg-color);
+    border-radius: 16px; 
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-interface {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--feature-icon-bg) 100%);
+    padding: 24px 12px;
+    transition: background 0.3s; /* for switching to dark/light */
+}
+
+.profile-card {
+    background-color: var(--bg-color-card);
+    border-radius: 12px; 
+    box-shadow: var(--card-shadow);
+    padding: 16px; 
+    margin-bottom: 16px; 
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.profile-image {
+    width: 100%;
+    height: 160px;
+    background-color: var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 12px; 
+    transition: background-color 0.3s;
+}
+
+.profile-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.swipe-actions {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+}
+
+.swipe-button {
+    width: 48px; 
+    height: 48px; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swipe-left {
+    background-color: rgb(205, 195, 195);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.swipe-right {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: var(--text-color-light);
+    margin-bottom: 30px;
+    transition: color 0.3s;
+}
+
+/* features section */
+.features {
+    padding: 100px 0;
+    background-color: var(--bg-color-card);
+    transition: background-color 0.3s;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature {
+    text-align: center;
+    padding: 30px;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--feature-icon-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--primary-color);
+    font-size: 30px;
+    transition: background-color 0.3s;
+}
+
+.feature h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.feature p {
+    color: var(--text-color-light);
+    transition: color 0.3s;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 100px 0;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.step p {
+    color: var(--text-color-light);
+    transition: color 0.3s;
+}
+
+.step:not(:last-child):after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: -30px;
+    width: 60px;
+    height: 2px;
+    background-color: var(--border-color);
+    transition: background-color 0.3s;
+}
+
+/* faq section */
+.faq {
+    padding: 100px 0;
+    background-color: var(--bg-color-card);
+    transition: background-color 0.3s;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-pair {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.faq-toggle {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding-bottom: 20px;
+    color: var(--text-color-light);
+    transition: color 0.3s;
+}
+
+.faq-pair.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-pair.active .faq-answer {
+    max-height: 200px;
+    padding: 0 30px 20px;
+}
+
+/* download section */
+.download {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.download h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.download p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.app-button {
+    background-color: white;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    padding: 12px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="dark"] .app-button {
+    background-color: var(--bg-color-card);
+}
+
+.button-icon {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 60px 0 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 220px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--footer-text);
+    transition: color 0.3s;
+}
+
+.footer-column p {
+    color: var(--footer-link);
+    transition: color 0.3s;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--footer-link);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--footer-text);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+    color: var(--footer-link);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+    max-width: 90%;
+}
+
+.instagram-post {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+/* larger image on hover - pops out */
+.instagram-post:hover { 
+    transform: scale(1.05);
+}
+
+.instagram-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.instagram-follow {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.instagram-follow a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.instagram-follow a:hover {
+    text-decoration: underline;
+}
+
+/* responsive (needs work) */
+/* large screens - laptops and desktops etc*/
+@media (max-width: 992px) { 
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+        order: 1;
+    }
+    
+    .hero-image {
+        order: 2;
+        margin-bottom: 30px;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    .subtitle {
+        font-size: 18px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .steps {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .step:not(:last-child):after {
+        display: none;
+    }
+
+    .instagram-grid {
+        max-width: 300px;
+    }
+}
+
+/* medium screens - phones and tablets */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        gap: 40px;
+    }
+    
+    .nav-items {
+        display: none;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .phone-mockup {
+        width: 200px;
+        height: 400px;
+    }
+
+    .profile-image {
+        height: 130px;
+    }
+
+    .profile-name, .profile-details {
+        font-size: 14px;
+    }
+
+    .swipe-actions {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+      
+    .swipe-button {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    position: relative;
+    z-index: 5;
+    }
+    
+    .faq-question h3 {
+        font-size: 16px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    .feature h3 {
+        font-size: 20px;
+    }
+    
+    .step h3 {
+        font-size: 20px;
+    }
+    
+    header .container {
+        padding: 0 15px;
+    }
+    
+    nav {
+        padding: 15px 0;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    .big-button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+    
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .instagram-grid {
+        max-width: 100%;
+    }
+}
+
+/* smaller phones */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 26px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+    }
+    
+    .phone-mockup {
+        width: 180px;
+        height: 360px;
+    }
+
+    .profile-card {
+        padding: 10px;
+    }
+
+    .profile-image {
+        height: 110px;
+        margin-bottom: 8px;
+    }
+
+    .swipe-button {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .profile-name, .profile-details {
+        margin-bottom: 4px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .app-interface {
+        padding: 15px 10px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .feature {
+        padding: 20px;
+    }
+    
+    .app-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .app-button {
+        width: 100%;
+        justify-content: center;
+    }
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
