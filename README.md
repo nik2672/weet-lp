@@ -1,10 +1,10 @@
-# brik-lp -  Landing page for brik app
+# weetlp -  Landing page for weet app
 
-Brik is a sleek, user-friendly room-sharing app. This is the landing page for the Brik, built with HTML, CSS, and JS.
+Weet
 
 ## 📂 Folder structure 
 ```.
-└───brik-lp
+└───weet-lp
     ├───assets
     │   ├───fonts
     │   ├───icons
